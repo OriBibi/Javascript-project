@@ -1,0 +1,75 @@
+<html>
+    <head>
+<title>Document</title>
+    </head>
+<body>
+    <style>
+        
+        div{
+            margin-bottom: 30px;
+            margin-block: 30px;
+            
+        }
+        label{
+            margin-bottom: 30px;
+            display: block;
+            color: teal;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        input{
+            
+            margin-bottom: 30px;
+
+
+        }
+        input:invalid{
+            background-color: lightcoral;
+            
+
+        }
+        input:valid{
+            background-color:darkseagreen;
+
+        }
+        button{
+            border-radius: 12px;
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.001);
+        }
+textarea{
+    display: block;
+}
+    </style>
+<form action="http://httpbin.org/post" method="post">
+    <div>
+    <label for="first_input" >Enter your first name please!</label>
+    <input required name="first" id="first_input"   minlength="3" maxlength="10"   type="text" placeholder="First name" onfocus="">
+    <label for="last_input">Enter your first name please!</label>
+    <input name="last" id="last_input" type="text" placeholder="Last name">
+    <label for="email_input">Enter your e-mail please!</label>
+    <input name="email" type="email" id="email_input" placeholder="Enter your email ">
+    <label for="feel _input" name="feel">how are you feeling?</label>
+    <input value="good" type="radio" id="feel1 _input" name="feel" placeholder="Last name" required/>good  
+    <input value="bad" type="radio" id="feel2 _input" name="feel" placeholder="Last name"/>bad
+    <div>
+    <label for="course">choose your preference course</label>
+    <select  name="cuorses" id="course"> 
+        <option selected disabled  value="">--choose one option--</option>
+        <option value="math">anfi 1</option>
+        <option value="computer1">tutorial to computer science</option>
+        <option value="computer2">tutorial to computer science 2</option>
+    </select>
+    </div>
+   <div> <label for="story" name="feel">commends</label>
+    <textarea  name="story" id="story" cols="30" rows="10"></textarea>
+</div>
+    </div>
+    <div><button onclick="answer()" class="send">confirm your information</button>
+    <button type="reset">reset</button></div>
+
+</form>
+<script src="main.js"></script>
+</body>
+</html>
