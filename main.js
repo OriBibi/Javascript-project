@@ -1,12 +1,12 @@
+
+
 var choose=document.querySelector('#first_input');
 choose.focus()
-choose.title('First name')
-
-choose.addEventListener('input',function(){
+setTimeout(function(){
+    if(choose.value!=0){
+    alert('Don`t forget big capital!')}},0)
     
-        console.log('INPUT!!');
-})
-
+    /*
 document.querySelector('input').style.display=function(e){
     if(e.invalid==true){
         this.backgroundColor=lightcoral;
@@ -20,18 +20,86 @@ choose.addEventListener('input',function(){
         
     }
 })
-
-function answer(){
-    var httpR= new XMLhttpRequest();
-    httpR.onreadystatechange=function(){
-    if (httpR.readyState===XMLhttpRequest.DONE) {
-        if (httpR.status===200) {
-        alert(httpR.responseText)
-        }
-        else{
-            alert('ghjghj')
-        }
-    }}
-httpR.open('POST','answer.html')
-httpR.send()
+var httpR= new XMLhttpRequest();
+*/
+function lissen(e){
+    //console.log('e:',e.target.value)
+    var url="http/:ori.com/getselect?selectName="
+    endUrl=url+e.target.value
+    console.log(endUrl)/* אפשר להכניס את הכתובת הזאת שיצרנו לתוך הפונקציה 
+    אנסר ולשלוח ח את זה לתוך האופנן והסנד של איטטיטיפין 
+    בכך להגיע לאיזה כתובת שאני מעוניין בה
+     על סמך בחירה כל שהיא של המשתמשץ */
 }
+        function answer(){
+            var httpR= new XMLHttpRequest();
+            httpR.onreadystatechange=function(){
+            if (httpR.readyState===XMLHttpRequest.DONE) {
+                if (httpR.status===200) {
+                document.querySelector("#body").remove();
+                alert(JSON.parse(httpR.responseText))
+                }
+                else{
+                    alert('ghjghj')
+            }
+        }}
+        
+       // httpR.open('POST','answer.html')
+       // httpR.send()
+}
+document.querySelector('#course').addEventListener('change',lissen)
+//-----------class 20---------------
+
+//var timeoutid=setTimeout(function(){alert('welcome to my website!')},4000)
+//var intervalid=setInterval(function(){alert('welcome to my website!')},8000)
+
+
+//---------------------Jquery------------------//
+
+
+$('.registration').click(function(){
+    $('.showRegistration').show(800,function(){});
+    $(this).hide();
+    //this.style.color = this.style.color=='black'? 'grey':'black';
+})
+$('.send').click(function(){
+    $('.showRegistration').hide();
+    $('.registration').show();
+})
+
+    
+   
+    
+     $(".checkbox").change(function () {
+        if ($(this).is(':checked')) {
+            $('.body').css({ 
+                'backgroundImage': 'none',
+            'backgroundColor': 'rgb(68, 66, 66)',
+            'backgroundPosition': 'top center',
+            'background-size': '100% auto'
+            })
+            console.log('rrrrrr')
+        }
+        else {
+            console.log('qqqqqqq')
+            $('.body').css({
+                'backgroundImage': 'url(Capture.PNG)',
+            'backgroundPosition': 'top center',
+            'background-size': '100% auto',
+            'backgroundRepeat':'no-repeat'
+            
+            } )       }
+    })
+        
+    
+
+    //----by javascript------
+   /* document.querySelector(".registration").addEventListener('mouseover',function(){
+            this.style.color='blue'
+    })
+    document.querySelector(".registration").addEventListener('mouseleave',function(){
+            this.style.color='black'
+    })
+    //-----by jquery--------
+    $('.registration').mouseover(function () {this.style.color='blue'})
+    $('.registration').mouseleave(function () {this.style.color='black'})*/

@@ -1,75 +1,178 @@
 <html>
-    <head>
-<title>Document</title>
-    </head>
-<body>
-    <style>
-        
-        div{
-            margin-bottom: 30px;
-            margin-block: 30px;
-            
-        }
-        label{
-            margin-bottom: 30px;
-            display: block;
-            color: teal;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        input{
-            
-            margin-bottom: 30px;
+
+<head>
+  <title>Document</title>
+</head>
+
+<body class="body" style="background-image: url(Capture.PNG);background-repeat:no-repeat;background-position:top center;background-size:100% auto ">
+  <style>
+      
+    .registration {
+      border: none;
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      text-transform: uppercase;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      font-weight: 700;
+      font-size: 7.5px;
+      background-color: #222;
+      padding: 17px 60px;
+      margin: 0 auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+    }
+    .registration:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 490%;
+      width: 140%;
+      background: #78c7d2;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+      transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    }
+
+    .registration:hover:after {
+      -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+      transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
+
+    
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 17px;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 13px;
+      width: 13px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(13px);
+      -ms-transform: translateX(13px);
+      transform: translateX(13px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .btn:hover {
+      background-image: none;
+      background-color: #3e23d3;
+    }
+
+    .showRegistration {
+
+      position: absolute;
+      left: 80%;
+    }
+
+    .border {
+      border: 3px solid black;
+      border-bottom: black;
+    }
+
+    div {
+      margin-bottom: 30px;
+      margin-block: 30px;
+
+    }
+
+    label {
+      margin-bottom: 30px;
+      display: block;
+      color: teal;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+
+    input:invalid {
+      background-color: lightcoral;
 
 
-        }
-        input:invalid{
-            background-color: lightcoral;
-            
+    }
 
-        }
-        input:valid{
-            background-color:darkseagreen;
+    
+    button {
+      color: black;
+    }
 
-        }
-        button{
-            border-radius: 12px;
-            background-color: white;
-            color: black;
-            border: 2px solid #4CAF50;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.001);
-        }
-textarea{
-    display: block;
-}
-    </style>
-<form action="http://httpbin.org/post" method="post">
-    <div>
-    <label for="first_input" >Enter your first name please!</label>
-    <input required name="first" id="first_input"   minlength="3" maxlength="10"   type="text" placeholder="First name" onfocus="">
-    <label for="last_input">Enter your first name please!</label>
-    <input name="last" id="last_input" type="text" placeholder="Last name">
-    <label for="email_input">Enter your e-mail please!</label>
-    <input name="email" type="email" id="email_input" placeholder="Enter your email ">
-    <label for="feel _input" name="feel">how are you feeling?</label>
-    <input value="good" type="radio" id="feel1 _input" name="feel" placeholder="Last name" required/>good  
-    <input value="bad" type="radio" id="feel2 _input" name="feel" placeholder="Last name"/>bad
-    <div>
-    <label for="course">choose your preference course</label>
-    <select  name="cuorses" id="course"> 
-        <option selected disabled  value="">--choose one option--</option>
-        <option value="math">anfi 1</option>
-        <option value="computer1">tutorial to computer science</option>
-        <option value="computer2">tutorial to computer science 2</option>
-    </select>
+    textarea {
+      display: block;
+
+    }
+  </style>
+  <div style="top: 50%; right:0; left:0;">
+    <label for="Welcome" >Welcome to my website!</label></div>
+    <button class="registration" style="top: 80%; right:0; left:0;">contact</button>
+    <div class="showRegistration" style="display: none;">
+      <label for="first_input">Enter your first name please!</label>
+      <input  name="first" id="first_input"  type="text" placeholder="First name">
+      <label for="last_input">Enter your first name please!</label>
+      <input name="last" id="last_input" type="text" placeholder="Last name">
+      <label for="email_input">Enter your e-mail please!</label>
+      <input name="email" type="email" id="email_input" placeholder="Enter your email ">
+      <label for="feel _input" name="feel">Do you find interest in this page?</label>
+      <input value="good" type="radio" id="feel1 _input" name="feel" placeholder="Last name" required />yes
+      <input value="bad" type="radio" id="feel2 _input" name="feel" placeholder="Last name" />no
+      <div>
+        <label for="course">choose your preference contact</label>
+        <select name="cuorses" id="course">
+          <option selected disabled value="">--choose one option--</option>
+          <option value="math">Email</option>
+          <option value="computer1">Phone call</option>
+          <option value="computer2">Sms</option>
+        </select>
+      </div>
+      <div> <label for="story" name="feel">commends</label>
+        <textarea name="story" id="story" cols="30" rows="5"></textarea>
+      </div>
+      <div><button onclick="answer()" class="send">confirm your information</button>
+        <button class="reset" type="reset">reset</button></div>
     </div>
-   <div> <label for="story" name="feel">commends</label>
-    <textarea  name="story" id="story" cols="30" rows="10"></textarea>
-</div>
-    </div>
-    <div><button onclick="answer()" class="send">confirm your information</button>
-    <button type="reset">reset</button></div>
-
-</form>
-<script src="main.js"></script>
+    <label style="position: fixed; bottom:20 ; left: 10;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  ">night mode
+      <label class="switch" style="position: fixed; bottom: 0; left: 30;">
+        <input type="checkbox" class="checkbox">
+        <span class="slider round"></span>
+      </label> </label>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
