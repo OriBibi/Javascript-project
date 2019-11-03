@@ -1,5 +1,10 @@
+/*import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
 
+import Example from "./newReact"*/
 
+//ReactDOM.render(<Example />,document.querySelector(".body"))
 var choose=document.querySelector('#first_input');
 choose.focus()
 setTimeout(function(){
@@ -83,7 +88,7 @@ $('.send').click(function(){
         else {
             console.log('qqqqqqq')
             $('.body').css({
-                'backgroundImage': 'url(Capture.PNG)',
+                'backgroundImage': 'url(pictures/Capture.PNG)',
             'backgroundPosition': 'top center',
             'background-size': '100% auto',
             'backgroundRepeat':'no-repeat'
@@ -103,3 +108,18 @@ $('.send').click(function(){
     //-----by jquery--------
     $('.registration').mouseover(function () {this.style.color='blue'})
     $('.registration').mouseleave(function () {this.style.color='black'})*/
+
+    /*-----About me, how to insert the info word by word------*/
+var i = 0;
+var txt = 'Hi, a little about myself, I have about two years to finish my degree in computer engineering . I have a year and a half of experience working with advanced communication systems in "Elbit-Systems". This work included writing basic scripts on the Linux operating system, and in-depth learning of processes in communication networks. I love and proficient in Java, I have written a significant project in this language. Im a team worker,  dedicated and committed to the work.';
+var speed =30 ;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+k=8;
+console.log(k)
