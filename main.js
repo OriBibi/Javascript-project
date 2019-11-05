@@ -125,19 +125,31 @@ k=8;
 console.log(k)
 
 
-function App() {
+//function App() {
     const date = new Date()
     const hours = date.getHours()
      let timeOfDay
     if (hours < 12) {
-    timeOfDay = "morning"}
+    timeOfDay = "morning"
+}
 
-    else if (hours >= 12 && hours < 17) { timeOfDay = "afternoon"
+    else if (hours >= 12 && hours < 17) { 
+        timeOfDay = "afternoon"
+
     }
     else
      {
-    timeOfDay = "night"
-    document.querySelector('.morning_night').innerHTML('good{ timeOfDay}')
-    }
+    timeOfDay = "night";
+    $('.body').css({ 
+        'backgroundImage': 'none',
+    'backgroundColor': 'rgb(68, 66, 66)',
+    'backgroundPosition': 'top center',
+    'background-size': '100% auto'
+    })
 }
-var intervalid=setInterval(App(),4000)
+    document.querySelector('.morning_night').innerHTML='good '+timeOfDay;
+    
+    var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours() ).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+//}
+//var intervalid=setInterval(App(),4000)
