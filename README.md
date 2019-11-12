@@ -1,2 +1,2 @@
 # Javascript-project
-Build a user integration page
+The project is under construction!
